@@ -15,9 +15,9 @@ Informações do(a) convidado(a) principal:
 - Idade: ${req.body.idade}
 - Dieta: ${req.body.dieta}
 
-Número de convidados adicionais: ${req.body.guests.length}
+Número de acompanhantes: ${req.body.guests.length}
 
-Detalhes dos convidados adicionais:
+Detalhes dos acompanhantes:
 ${req.body.guests
   .map((guest, index) => {
     return `
