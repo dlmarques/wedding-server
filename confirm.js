@@ -11,9 +11,9 @@ router.post("/confirm", async (req, res) => {
 O(a) ${req.body.nome} confirmou presença no casamento! 
 
 Informações do(a) convidado(a) principal:
-- **E-mail**: ${req.body.email}
-- **Idade**: ${req.body.idade}
-- **Dieta**: ${req.body.dieta}
+- E-mail: ${req.body.email}
+- Idade: ${req.body.idade}
+- Dieta: ${req.body.dieta}
 
 Número de convidados adicionais: ${req.body.guests.length}
 
@@ -21,7 +21,8 @@ Detalhes dos convidados adicionais:
 ${req.body.guests
   .map((guest, index) => {
     return `
-${index + 1}. Nome: ${guest.nome}
+${index + 1}. 
+   - Nome: ${guest.nome}
    - Idade: ${guest.idade}
    - Dieta: ${guest.dieta}`;
   })
