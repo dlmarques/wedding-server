@@ -9,7 +9,19 @@ const port = process.env.PORT || 3000;
 //Import routes
 const confirmRoute = require("./confirm");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://martaedaniel2025.com"],
+    credentials: true,
+  })
+);
+app.options(
+  "*",
+  cors({
+    origin: ["https://martaedaniel2025.com"],
+    credentials: true,
+  })
+);
 
 //Middleware
 app.use(express.json());
