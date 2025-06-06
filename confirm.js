@@ -23,7 +23,7 @@ ${req.body.guestsList
 ${index + 1}. 
    - Nome: ${guest.name}
    - Idade: ${guest.age}
-   - Dieta: ${guest.diet}`;
+   - Dieta: ${guest.diet || "Não tem"}`;
   })
   .join("\n")}` : ""}
   `,
