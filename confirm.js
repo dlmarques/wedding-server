@@ -6,18 +6,17 @@ router.post("/confirm", async (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL,
     to: process.env.EMAIL,
-    subject: "Confirmação",
+    subject: "Confirmação de presença",
     text: `
 O(a) ${req.body.nome} confirmou presença no casamento! 
 
 Informações do(a) convidado(a) principal:
 - E-mail: ${req.body.email}
-- Idade: ${req.body.idade}
-- Dieta: ${req.body.dieta}
+- Dieta: ${req.body.diet}
 
 Número de acompanhantes: ${req.body.guests}
 
-Detalhes dos acompanhantes:
+${req.body.guestsList.length > 0 && `Detalhes dos acompanhantes:
 ${req.body.guestsList
   .map((guest, index) => {
     return `
@@ -26,7 +25,7 @@ ${index + 1}.
    - Idade: ${guest.idade}
    - Dieta: ${guest.dieta}`;
   })
-  .join("\n")}
+  .join("\n")}`}
   `,
   };
 
