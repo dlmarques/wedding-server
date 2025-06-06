@@ -15,10 +15,10 @@ Informações do(a) convidado(a) principal:
 - Idade: ${req.body.idade}
 - Dieta: ${req.body.dieta}
 
-Número de acompanhantes: ${req.body.guests.length}
+Número de acompanhantes: ${req.body.guests}
 
 Detalhes dos acompanhantes:
-${req.body.guests
+${req.body.guestsList
   .map((guest, index) => {
     return `
 ${index + 1}. 
